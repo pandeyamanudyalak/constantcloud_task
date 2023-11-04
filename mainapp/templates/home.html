@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <title>Login</title>
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body class="account-page">
+  <div class="main-wrapper">
+    <div class="account-content">
+      <div class="container">
+
+        <div class="account-box">
+          <div class="account-wrapper">
+            <h3 class="account-title">Login</h3>
+            <form action="user_login" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label>Usernane</label>
+                <input class="form-control" type="text" name="username" />
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label>Password</label>
+                  </div>
+                  <div class="col-auto">
+                    <a class="text-muted" href="">
+                      Forgot password?
+                    </a>
+                  </div>
+                </div>
+                <input class="form-control" type="password" name="password" />
+              </div>
+              <div class="form-group text-center">
+                <button class="btn btn-primary account-btn" type="submit">
+                  Login
+                </button>
+
+              </div>
+              <p>If you are not regestered,create your account? <a href="user_register" class="add-marks-button">Create Your Account</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/jquery-3.6.0.min.js' %} "></script>
+  <script src="{% static 'js/popper.min.js' %} "></script>
+  <script src="{% static 'js/bootstrap.min.js' %} "></script>
+  <script src="{% static 'js/app.js' %} "></script>
+</body>
+
+</html>
